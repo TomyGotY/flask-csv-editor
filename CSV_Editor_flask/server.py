@@ -92,7 +92,7 @@ def route_save_story():
 def route_edit_story(post_id):
     stories = read_csv()
     for row in stories:
-        if row is not None:
+        if len(row):
             if row[0] == post_id:
                 return render_template("story.html", row=row)
         else:
