@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Super Sprinter 3000</title>
+</head>
+
+<body>
+    <h1>User Story Manager</h1>
+    <form action="/story">
+        <button type="submit">Add new story</button>
+    </form>
+    <br>
+    <table border="1">
+        <tr>
+            <th> ID </th>
+            <th>Story Title</th>
+            <th>User Story</th>
+            <th>Acceptance criteria</th>
+            <th>Business Value</th>
+            <th>Estimation (h)</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for row in stories %}
+        <tr>
+            {% for item in row %}
+            <td>{{item}}</td>
+            {%endfor%}
+            <td><a href=/story/{{row[0]}}>&#x270F;</a></td>
+            <td><a href=/delete/{{row[0]}}>&#x2717;</a></td>
+            <br>
+        </tr>
+        {%endfor%}
+    </table>
+
+
+
+
+</body>
+
+</html>
